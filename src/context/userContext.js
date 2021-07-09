@@ -33,13 +33,12 @@ const UserContextProvider = (props) => {
         })
             .then(response => response.json())
             .then(result => setUsers(result.data))
-            
         }
     },[users, headers]);
     //End
 
     return (
-        <UserContext.Provider value={{ users, getHeaders }}>
+        <UserContext.Provider value={{ headers, users, getHeaders }}>
             { props.children }
         </UserContext.Provider>
     )

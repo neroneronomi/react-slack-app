@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { registerUser } from '../../context/useApi'
 import './RegisterForm.scss'
 
 const RegisterForm = () => {
@@ -19,19 +20,8 @@ const RegisterForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(values)
-
-        fetch('http://206.189.91.54/api/v1/auth/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(values),
-            redirect: 'follow'
-        })
-        .then(response => response.json())
+        registerUser(values)
         .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-
-
     }
     return (
         <div className="register-container">
