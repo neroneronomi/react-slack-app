@@ -16,12 +16,14 @@ const LoginForm = () => {
             [name]: value
         });
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         loginUser(values)
-        .then(userData => getHeaders(userData))
-        .catch(error => console.log("ERROR: " + error));
+        .then(data => {
+            getHeaders(data)
+            alert('You are logged in')
+        })
+        .catch(error => console.log(error));
     }
     return (
     <div className="login-container">
@@ -38,7 +40,6 @@ const LoginForm = () => {
                     onChange={handleChange}
                 />
             </div>
-
             <div className="login-content">
                 <input 
                     className="login-input" 

@@ -2,43 +2,41 @@ import React, { createContext, useState, useEffect } from 'react';
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
-
-    //Get Headers from login
+    //Headers
     const [headers, setHeaders ] = useState(() => {
         const localData = localStorage.getItem('headers');
         return localData ? JSON.parse(localData) : []
     });
-    const getHeaders = (userData) => {
-        setHeaders(userData)
-    }
+    const getHeaders = (data) => {
+        setHeaders(data)
+    };
     useEffect(() => {
         localStorage.setItem('headers', JSON.stringify(headers))
-    },[headers])
-    //End
-
-    //Get Users List
+    },[headers]);
+    //Users
     const [users, setUsers] = useState(() => {
         const localData = localStorage.getItem('users');
         return localData ? JSON.parse(localData) : []
-    })
-
+    });
+    const getUsers = (data) => {
+        setUsers(data)
+    };
     useEffect(() => {
         localStorage.setItem('users', JSON.stringify(users))
-        if (headers.length === 0 ) {
-            return
-        } else {
-        fetch("http://206.189.91.54//api/v1/users", {
-            method: 'GET',
-            headers: headers,
-        })
-            .then(response => response.json())
-            .then(result => setUsers(result.data))
-        }
-    },[users, headers]);
-    //End
-
+    },[users]);
+   //Channels
+    const [channels, setChannels] = useState(() => {
+        const localData = localStorage.getItem('users');
+        return localData ? JSON.parse(localData) : []
+    });
+    const getChannels = (data) => {
+        setChannels(data)
+    };
+    useEffect(() => {
+        localStorage.setItem('channels', JSON.stringify(channels))
+    },[channels]);
     return (
-        <UserContext.Provider value={{ headers, users, getHeaders }}>
+        <UserContext.Provider value={{ headers, getHeaders, getUsers, getChannels }}>
             { props.children }
         </UserContext.Provider>
     )
