@@ -13,15 +13,8 @@ const UserContextProvider = (props) => {
         localStorage.setItem('headers', JSON.stringify(headers))
     },[headers]);
 
-    
-    const [channel, setChannel] = useState()
-
-    const getChannelID = (id) => {
-      setChannel(id)
-      console.log(channel)
-    };
     return (
-        <UserContext.Provider value={{ headers, getHeaders, channel, getChannelID }}>
+        <UserContext.Provider value={{ headers, getHeaders }}>
             { props.children }
         </UserContext.Provider>
     )

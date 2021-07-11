@@ -11,7 +11,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path='/'><Home /></Route>
-            <Route exact path='/client'><Client /></Route>
+            <Route path='/client'><Client /></Route>
           </Switch>
         </Router>
       </UserContextProvider>

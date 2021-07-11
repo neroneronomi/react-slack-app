@@ -1,23 +1,24 @@
-import React, { useContext } from 'react'
-import useFetchGet from '../../API/useFetchGet';
+import { useParams } from 'react-router-dom';
+import { useContext } from 'react'
 import { UserContext } from '../../context/userContext';
-import './ChannelDetails.scss'
-
+import useFetchGet from '../../API/useFetchGet';
 const ChannelDetails = () => {
+  const { id } = useParams();
   const { headers } = useContext(UserContext);
-  const { data: activeChannel, isPending, error } = useFetchGet(
-      `http://206.189.91.54//api/v1/channels/${15}`, headers)
-      // console.log(isPending)
-      // console.log(error)
-      // console.log(data)
-    return (
-        <div className='channel-details-container'>
-            <h2>Active Channel</h2>
-            {error && <div>{ error }</div>}
-            {isPending && <div>Loading...</div>}
-            {activeChannel && <div>{ activeChannel.data.name }</div>}
-        </div>
-    )
+  const { data: channelDetails, isPending, error } = useFetchGet(
+      `http://206.189.91.54//api/v1/channels/${id}`, headers)
+  return (
+    <div className='channel-details-container'>
+      <h2>Channel Details - { id }</h2>
+      { error && <div>{ error }</div> }
+      { isPending && <div>Loading...</div> }
+      { channelDetails && 
+      <div>
+        <h4>{ channelDetails.data.name }</h4>
+      </div> 
+      }
+    </div>
+  )
 }
 
-export default ChannelDetails
+export default ChannelDetails;
