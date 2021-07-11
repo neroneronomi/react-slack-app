@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from '../../context/userContext';
-import { loginUser } from '../../context/useApi'
+import { loginUser } from '../../API/useFetchPost'
 import './LoginForm.scss'
 
 const LoginForm = () => {

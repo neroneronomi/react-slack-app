@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { registerUser } from '../../context/useApi'
+import { registerUser } from '../../API/useFetchPost'
 import './RegisterForm.scss'
 
 const RegisterForm = () => {
