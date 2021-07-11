@@ -6,6 +6,7 @@ import './Client.scss'
 import ChannelList from '../../components/Channels/ChannelList';
 import CreateChannel from '../../components/Channels/CreateChannel';
 import ChannelDetails from '../../components/Channels/ChannelDetails';
+import AddMember from '../../components/Channels/AddMember';
 
 const Client = () => {
   const { headers } = useContext(UserContext);
@@ -23,7 +24,10 @@ const Client = () => {
       </div>
       <Switch>
         <Route path='/client/channels/:id'>
+          <div className='channel-details'>
           <ChannelDetails />
+          <AddMember />
+          </div>
         </Route>
         <Route path='/client/messages'>
           <h1>Hello Messages</h1>

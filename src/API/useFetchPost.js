@@ -42,7 +42,22 @@ export const createChannel = (headers, name, user_ids) => {
     headers: headers,
     body: Form
   };
-  return fetch("http://206.189.91.54//api/v1/channels", requestOptions)
+  return fetch('http://206.189.91.54//api/v1/channels', requestOptions)
+  .then(response => response.json())
+  .then(result => result)
+  .catch(error => error);
+}
+
+export const addMember = (headers, id, member_id) => {
+  const Form = new FormData()
+  Form.set('id', id)
+  Form.set('member_id', member_id)
+  const requestOptions = {
+    method: 'POST',
+    headers: headers,
+    body: Form
+  };
+  return fetch('http://206.189.91.54//api/v1/channel/add_member', requestOptions)
   .then(response => response.json())
   .then(result => result)
   .catch(error => error);
