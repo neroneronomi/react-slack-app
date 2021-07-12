@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { registerUser } from '../../context/useApi'
 import './RegisterForm.scss'
+import Popup from 'reactjs-popup'
 
 const RegisterForm = () => {
 
@@ -24,6 +25,7 @@ const RegisterForm = () => {
         .then(result => console.log(result))
     }
     return (
+        <Popup trigger={<button> Registration </button>} position="left top">
         <div className="register-container">
         <form className="register-form" onSubmit={handleSubmit}>
             <div className="register-content">
@@ -67,6 +69,7 @@ const RegisterForm = () => {
             <button className='register-btn' type='submit'>REGISTER</button>
         </form>
     </div>
+    </Popup>
     )
 }
 
