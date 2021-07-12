@@ -1,6 +1,7 @@
-import React, { useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 import { UserContext } from '../../context/userContext';
 import { loginUser } from '../../API/useFetchPost'
+import { useHistory } from "react-router-dom";
 import './LoginForm.scss'
 
 const LoginForm = () => {
@@ -9,6 +10,7 @@ const LoginForm = () => {
         email: "",
         password: "",
     });
+    const history = useHistory();
     const handleChange = (e) => {
         const { name, value } = e.target;
         setValues({
@@ -21,6 +23,7 @@ const LoginForm = () => {
         loginUser(values)
         .then(data => {
             getHeaders(data)
+            history.push("/client");
             alert('You are logged in')
         })
         .catch(error => console.log(error));
