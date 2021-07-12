@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 const ChannelList = ({ channels }) => {
   return (
     <>
-      <h2>My Channels</h2>
       {(() => {
         if (channels.errors === 'No available channels.') {
           return <h4>{channels.errors}</h4>
