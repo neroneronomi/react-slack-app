@@ -1,61 +1,22 @@
-import { useContext, useState } from 'react'
-import { UserContext } from '../../context/userContext';
-import { Switch, Route, useHistory } from "react-router-dom"
-import useFetchGet from '../../API/useFetchGet';
-import ChannelList from '../../components/Channels/ChannelList';
-import CreateChannel from '../../components/Channels/CreateChannel';
+import { Switch, Route } from "react-router-dom"
+import Channels from "../../components/Channels/Channels";
+import Messages from "../../components/Messages/Messages";
 import ChannelDetails from '../../components/Channels/ChannelDetails';
-import AddMember from '../../components/Channels/AddMember';
 import './Client.scss'
+import Logout from "../../components/Logout/Logout";
 
 const Client = () => {
-  const { headers, logoutUser } = useContext(UserContext);
-  const [stateChannels, setStateChannels] = useState(false)  
-  const handleChannels = (e) => {
-      setStateChannels(!stateChannels)
-  };
-  const [stateMessages, setStateMessages] = useState(false)  
-  const handleMessages = (e) => {
-      setStateMessages(!stateMessages)
-  };
-  const history = useHistory();
-  const handleLogout = (e) => {
-    logoutUser()
-    history.push("/");
-
-  }
-  const { data: channels, isPending, error } = useFetchGet(
-      'http://206.189.91.54//api/v1/channels', headers)
   return (
     <div className='Client'>
       <div className="menu-tab">
-        <div className="channel">
-          <div className="create-channel">
-            <CreateChannel />
-          </div>
-          <div className='toggle-channel' onClick={handleChannels}>
-            <h3><i className={stateChannels ? 'fas fa-caret-right fa-rotate-90' : 'fas fa-caret-right'}></i> Channels</h3>
-          </div>
-          <div className={stateChannels ? 'channel-list-active' : 'channel-list'}>
-            { error && <div>{ error }</div> }
-            { isPending && <div>Loading...</div> }
-            { channels && <ChannelList channels={channels} /> }
-          </div>
-        </div>
-        <div className="messages">
-          <div className='toggle-messages' onClick={handleMessages}>
-            <h3><i className={stateMessages ? 'fas fa-caret-right fa-rotate-90' : 'fas fa-caret-right'}></i> Messages</h3>
-          </div>
-        </div>
-        <div className='logout'>
-          <button className='logout-btn' type='button' onClick={handleLogout}>LOGOUT</button>
-        </div>
+        <Channels />
+        <Messages />
+        <Logout />
       </div>
       <Switch>
         <Route path='/client/channels/:id'>
           <div className='channel-details'>
           <ChannelDetails />
-          <AddMember />
           </div>
         </Route>
         <Route path='/client/messages'>

@@ -50,13 +50,13 @@ const AddMember = () => {
             type="email"
             name="email"
             // autoComplete="off"
-            placeholder="Enter User Email"
+            placeholder="Enter Email"
             required  
             value={values.email}
             onChange={handleChange}
         />
       </div>
-      <button className='add-member-btn' type='submit'>SUBMIT</button>
+      <button className='add-member-btn' type='submit'>Add Member</button>
     </form>
   </div>
   )
