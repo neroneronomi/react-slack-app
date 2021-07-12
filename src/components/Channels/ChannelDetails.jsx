@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../../context/userContext';
 import useFetchGet from '../../API/useFetchGet';
+import AddMember from './AddMember';
 
 const ChannelDetails = () => {
   const { id } = useParams();
@@ -11,6 +12,7 @@ const ChannelDetails = () => {
   return (
     <>
       <h2>Channel Details</h2>
+      <AddMember />
       { error && <div>{ error }</div> }
       { isPending && <div>Loading...</div> }
       { channelDetails && 
