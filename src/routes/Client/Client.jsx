@@ -1,8 +1,8 @@
+import './Client.scss'
 import { Switch, Route } from "react-router-dom"
 import Channels from "../../components/Channels/Channels";
 import Messages from "../../components/Messages/Messages";
 import ChannelDetails from '../../components/Channels/ChannelDetails';
-import './Client.scss'
 import Logout from "../../components/Logout/Logout";
 
 const Client = () => {
