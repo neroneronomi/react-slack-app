@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { UserContext } from '../../context/userContext';
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route, useHistory } from "react-router-dom"
 import useFetchGet from '../../API/useFetchGet';
 import ChannelList from '../../components/Channels/ChannelList';
 import CreateChannel from '../../components/Channels/CreateChannel';
@@ -9,6 +9,7 @@ import AddMember from '../../components/Channels/AddMember';
 import './Client.scss'
 
 const Client = () => {
+  const { headers, logoutUser } = useContext(UserContext);
   const [stateChannels, setStateChannels] = useState(false)  
   const handleChannels = (e) => {
       setStateChannels(!stateChannels)
@@ -17,7 +18,12 @@ const Client = () => {
   const handleMessages = (e) => {
       setStateMessages(!stateMessages)
   };
-  const { headers } = useContext(UserContext);
+  const history = useHistory();
+  const handleLogout = (e) => {
+    logoutUser()
+    history.push("/");
+
+  }
   const { data: channels, isPending, error } = useFetchGet(
       'http://206.189.91.54//api/v1/channels', headers)
   return (
@@ -26,7 +32,7 @@ const Client = () => {
         <div className="channel">
           <div className="create-channel">
             <CreateChannel />
-           </div>
+          </div>
           <div className='toggle-channel' onClick={handleChannels}>
             <h3><i className={stateChannels ? 'fas fa-caret-right fa-rotate-90' : 'fas fa-caret-right'}></i> Channels</h3>
           </div>
@@ -40,6 +46,9 @@ const Client = () => {
           <div className='toggle-messages' onClick={handleMessages}>
             <h3><i className={stateMessages ? 'fas fa-caret-right fa-rotate-90' : 'fas fa-caret-right'}></i> Messages</h3>
           </div>
+        </div>
+        <div className='logout'>
+          <button className='logout-btn' type='button' onClick={handleLogout}>LOGOUT</button>
         </div>
       </div>
       <Switch>

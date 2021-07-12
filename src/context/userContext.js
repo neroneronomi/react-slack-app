@@ -9,12 +9,15 @@ const UserContextProvider = (props) => {
     const getHeaders = (data) => {
         setHeaders(data)
     };
+    const logoutUser = () => {
+      setHeaders([])
+    };
     useEffect(() => {
         localStorage.setItem('headers', JSON.stringify(headers))
     },[headers]);
 
     return (
-        <UserContext.Provider value={{ headers, getHeaders }}>
+        <UserContext.Provider value={{ headers, getHeaders, logoutUser }}>
             { props.children }
         </UserContext.Provider>
     )
