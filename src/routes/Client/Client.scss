@@ -1,0 +1,47 @@
+@import "../../scss/variables";
+
+.Client {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.menu-tab {
+  width: 15%;
+  height: 100%;
+  border: $testborder1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  .channel {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    border: $testborder2;
+    .toggle-channel {
+      display: flex;
+    }
+    .channel-list {
+      display: none;
+    }
+    .channel-list-active {
+      border: $testborder3;
+    }
+  }
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    border: $testborder2;
+  }
+}
+
+.channel-details {
+  border: $testborder1;
+  height: 10%;
+  width: 85%;
+}
+
+

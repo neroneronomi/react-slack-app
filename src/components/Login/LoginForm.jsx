@@ -1,6 +1,7 @@
-import React, { useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 import { UserContext } from '../../context/userContext';
-import { loginUser } from '../../context/useApi'
+import { loginUser } from '../../API/useFetchPost'
+import { useHistory } from "react-router-dom";
 import './LoginForm.scss'
 
 const LoginForm = () => {
@@ -9,6 +10,7 @@ const LoginForm = () => {
         email: "",
         password: "",
     });
+    const history = useHistory();
     const handleChange = (e) => {
         const { name, value } = e.target;
         setValues({
@@ -16,12 +18,15 @@ const LoginForm = () => {
             [name]: value
         });
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         loginUser(values)
-        .then(userData => getHeaders(userData))
-        .catch(error => console.log("ERROR: " + error));
+        .then(data => {
+            getHeaders(data)
+            history.push("/client");
+            alert('You are logged in')
+        })
+        .catch(error => console.log(error));
     }
     return (
     <div className="login-container">
@@ -38,7 +43,6 @@ const LoginForm = () => {
                     onChange={handleChange}
                 />
             </div>
-
             <div className="login-content">
                 <input 
                     className="login-input" 

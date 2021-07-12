@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
-import { registerUser } from '../../context/useApi'
+import { registerUser } from '../../API/useFetchPost'
 import './RegisterForm.scss'
 import Popup from 'reactjs-popup'
 
 const RegisterForm = () => {
-
     const [values, setValues] = useState({
         email: "",
         password: "",
         password_confirmation: ""
     });
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setValues({
@@ -18,11 +16,18 @@ const RegisterForm = () => {
             [name]: value
         });
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
+
         registerUser(values)
-        .then(result => console.log(result))
+        .then(result => {
+            if (result.status === 'error') {
+                console.log(result.errors.full_messages)
+            } else {
+                alert('Account Created')
+            }
+        })
+        .catch(error => console.log(error))
     }
     return (
         <Popup trigger={<button> Registration </button>} position="left top">
@@ -40,7 +45,6 @@ const RegisterForm = () => {
                     onChange={handleChange}
                 />
             </div>
-
             <div className="register-content">
                 <input 
                     className="register-input" 
@@ -53,7 +57,6 @@ const RegisterForm = () => {
                     onChange={handleChange}
                 />
             </div>
-
             <div className="register-content">
                 <input 
                     className="register-input" 
