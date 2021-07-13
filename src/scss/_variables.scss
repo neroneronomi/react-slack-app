@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 //Font Size
 $font-es: 0.75rem;
@@ -12,9 +13,21 @@ $font-xlg: 2rem;
 $montserrat: "Montserrat", sans-serif;
 $opensans: "Open Sans", sans-serif;
 $roboto: "Roboto", sans-serif;
+$lato: "Lato", sans-serif;
 
 //Colors
 $whiteshade: #e7e6dd;
+$blackshade: #1d1c1d; //heading
+$darkgrey: #454245; //subheading
+$lightgrey: #868686; //border
+$grey: #616061; //placeholder
+$grey2: #606060; //questions
+$grey3: #696969; //footer
+$darkblue: #0b4c8c; //links when hovered, border when active
+$lightblue: #bbe1f1; //border bg
+$blue: #1264a3; //links
+$darkpurple: #4a154b; //button
+$lightpurple: #5c2c5d; //button when hovered
 
 //Borders
 $border-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
