@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { UserContext } from '../../context/userContext';
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
+import "./Logout.scss";
 
 const Logout = () => {
   const { logoutUser } = useContext(UserContext);

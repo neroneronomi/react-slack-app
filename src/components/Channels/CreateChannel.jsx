@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from '../../context/userContext';
-import { createChannel } from '../../API/useFetchPost'
+import { createChannel } from '../../API/useFetchPost';
+import "./CreateChannel.scss";
 
 const CreateChannel = () => {
   const { headers } = useContext(UserContext);
