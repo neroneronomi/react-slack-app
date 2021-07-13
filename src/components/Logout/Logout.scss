@@ -1,0 +1,13 @@
+@import "../../scss/variables";
+
+.logout-btn {
+    background-color: #5C2C5D;
+    color: white;
+    border-radius: 4px;
+    margin-left: 50px;  
+    padding: 2px;
+}
+
+.logout-btn:hover {
+    background-color: #0B4C8C;
+}
