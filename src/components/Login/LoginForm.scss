@@ -1,7 +1,105 @@
 @import "../../scss/variables";
 
 .login-container {
-  width: 40%;
-  height: 100%;
-  border: $testborder1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-header {
+  padding: 48px 0 40px;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.center-col {
+  display: grid;
+  justify-content: center;
+}
+
+.login-heading {
+  font-family: $lato; //change to larsseit if keri
+  color: $blackshade;
+  font-weight: 900; //700
+  font-size: 48px;
+  line-height: 48px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: -0.75px;
+  margin-bottom: 10px;
+}
+
+.login-form {
+  margin: 70px auto 40px auto;
+  width: 400px;
+  max-width: 400px;
+}
+
+.login-content {
+  height: 60px;
+}
+
+.login-input {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 18px;
+  border: 1px solid $lightgrey;
+  border-radius: 4px;
+}
+
+.login-input:focus {
+  outline: none;
+  border: 1px solid $darkblue;
+  box-shadow: 0 0 6px 4px $lightblue;
+}
+
+::placeholder {
+  font-family: $lato;
+  color: $grey;
+  font-weight: 500;
+}
+
+.login-btn {
+  margin-bottom: 24px;
+  width: 100%;
+  font-family: $lato;
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  background-color: $darkpurple;
+  align-self: flex-start;
+  cursor: pointer;
+  height: 44px;
+  padding: 0 16px 3px;
+  border: none;
+  border-radius: 4px;
+}
+
+.login-btn:hover {
+  background-color: $lightpurple;
+  box-shadow: 0 0 4px 0px $lightgrey;
+}
+
+.signup-caption {
+  font-family: $lato;
+  font-size: 13px;
+  font-weight: 400;
+  color: $grey2;
+  display: flex;
+}
+
+.signup-caption div {
+  margin-left: 0.3em;
+  color: $blue;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.signup-caption div:hover {
+  color: $darkblue;
+  text-decoration: underline;
 }
