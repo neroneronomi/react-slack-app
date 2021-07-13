@@ -11,15 +11,14 @@ const ChannelDetails = () => {
     `http://206.189.91.54//api/v1/channels/${id}`, headers)
   return (
     <>
-      <h2>Channel Details</h2>
-      <AddMember />
       { error && <div>{ error }</div> }
       { isPending && <div>Loading...</div> }
       { channelDetails && 
-      <div>
+      <div className="channel-details">
         <h4>{ channelDetails.data.name }</h4>
       </div> 
       }
+      <AddMember />
     </>
   )
 }
