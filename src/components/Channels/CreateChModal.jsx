@@ -1,27 +1,36 @@
-import Popup from 'reactjs-popup'
-import 'reactjs-popup/dist/index.css';
-import CreateChannel from './CreateChannel'
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
+import CreateChannel from "./CreateChannel";
 
 const CreateChModal = () => {
   return (
     <Popup
-    trigger={<button type='button'><i class="fas fa-plus"></i></button>}
-    modal
-    nested
-  >
-    {close => (
-      <div className="modal">
-        <button className="close" onClick={close}>
-          &times;
+      trigger={
+        <button type="button">
+          <i class="fas fa-plus"></i>
         </button>
-        <div className="header">Create Channel</div>
-        <div className="content">
-        <CreateChannel />
+      }
+      modal
+      nested
+    >
+      {(close) => (
+        <div className="modal">
+          <button className="close" onClick={close}>
+            &times;
+          </button>
+          <div className="header">Create a channel</div>
+          <div className="caption">
+            Channels are where your team communicates. They’re best when
+            organized around a topic — #marketing, for example.
+          </div>
+          <br></br>
+          <div className="content">
+            <CreateChannel />
+          </div>
         </div>
-      </div>
-    )}
-  </Popup>
-  )
-}
+      )}
+    </Popup>
+  );
+};
 
 export default CreateChModal;
