@@ -93,17 +93,32 @@
     .contact-preview {
       width: 100%;
       .mycontacts {
+        display: flex;
+        justify-content: space-between;
+        place-items: center;
         width: 100%;
-        padding: 2px 30px;
+        padding: 4px 30px;
         a {
           text-decoration: none;
           color: $menufont;
           font-size: $font-es;
         }
+        i {
+          display: none;
+        }
+        a:active {
+          font-size: $font-xlg;
+        }
       }
     }
     .contact-preview:hover {
-      color: white;
+      a {
+        color: white;
+      }
+      i {
+        display: block;
+        cursor: pointer;
+      }
       background-color: $menuhover;
     }
   }

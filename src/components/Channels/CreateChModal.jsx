@@ -5,7 +5,7 @@ import CreateChannel from './CreateChannel'
 const CreateChModal = () => {
   return (
     <Popup
-    trigger={<button type='button'><i class="fas fa-plus"></i></button>}
+    trigger={<button type='button'><i className="fas fa-plus"></i></button>}
     modal
     nested
   >
@@ -20,7 +20,7 @@ const CreateChModal = () => {
         </div>
       </div>
     )}
-  </Popup>
+  </Popup> 
   )
 }
 
