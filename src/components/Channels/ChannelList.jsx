@@ -10,9 +10,11 @@ const ChannelList = ({ channels }) => {
           return <div>
           {channels && channels.data.map((channel) => (
             <div className='channel-preview' key={channel.id}>
-              <Link to={`/client/channels/${channel.id}`}>
-              <span>{channel.name}</span>
-              </Link>
+              <div className="mychannels">
+                <Link to={`/client/channels/${channel.id}`}>
+                <span>{channel.name}</span>
+                </Link>
+              </div>
             </div>
           ))}
           </div>;

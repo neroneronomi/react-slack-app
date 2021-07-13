@@ -1,0 +1,164 @@
+@import "../../scss/variables";
+
+.Menu {
+  height: 100%;
+  width: 280px;
+  border: $lightgray-border;
+  background-color: $menubgcolor;
+  color: $menufont;
+  .menu-icons {
+    width: 100%;
+    h2 {
+      color: white;
+      text-align: center;
+      padding: 20px 0px;
+      font-size: $font-sm;
+      border-bottom: $lightgray-border;
+    }
+    .menu-info {
+      margin-top: 20px;
+      cursor: pointer;
+      .info {
+        padding: 4px 20px;
+        font-size: $font-sm;
+      }
+      .info:hover {
+        color: white;
+        background-color: $menuhover;
+      }
+    }
+  }
+  .channel {
+    width: 100%;
+    margin-top: 20px;
+    .toggle-channel {
+      padding: 0px 20px;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      button {
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: $menufont;
+      }
+    }
+    .channel-list {
+      display: none;
+    }
+    .channel-list-active {
+      width: 100%;
+      .channel-preview {
+        width: 100%;
+        .mychannels {
+          width: 100%;
+          padding: 2px 30px;
+          a {
+            text-decoration: none;
+            color: $menufont;
+            font-size: $font-es;
+          }
+        }
+      }
+      .channel-preview:hover {
+        color: white;
+        background-color: $menuhover;
+      }
+    }
+  }
+}
+
+.messages {
+  width: 100%;
+  margin-top: 20px;
+  .toggle-messages {
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    button {
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: $menufont;
+    }
+  }
+  .contact-list {
+    display: none;
+  }
+  .contact-list-active {
+    width: 100%;
+    .contact-preview {
+      width: 100%;
+      .mycontacts {
+        width: 100%;
+        padding: 2px 30px;
+        a {
+          text-decoration: none;
+          color: $menufont;
+          font-size: $font-es;
+        }
+      }
+    }
+    .contact-preview:hover {
+      color: white;
+      background-color: $menuhover;
+    }
+  }
+}
+
+.popup-content {
+  margin: auto;
+  width: 20% !important;
+  height: 40%;
+  transition: 0.4s ease-in;
+  animation: anvil;
+  padding: 10px;
+  // border-radius: $rounded;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.4);
+}
+.modal {
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: $font-xlg;
+  padding: 5px;
+}
+
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+@keyframes anvil {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  1% {
+    transform: scale(0.96) translateY(10px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+  }
+}

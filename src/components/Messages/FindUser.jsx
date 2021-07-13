@@ -1,16 +1,12 @@
-import { useState, useContext } from 'react'
-import { useParams } from 'react-router-dom';
+import { useContext, useState } from 'react'
 import { UserContext } from '../../context/userContext';
-import { addMember } from '../../API/useFetchPost'
 import useFetchGet from '../../API/useFetchGet';
 
-const AddMember = () => {
-  const { id } = useParams();
-  const { headers } = useContext(UserContext);
+const FindUser = () => {
+  const { headers, getContacts } = useContext(UserContext);
   const [values, setValues] = useState({
     email: "",
   });
-  const [users, setUsers] = useState(null)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -18,6 +14,7 @@ const AddMember = () => {
         [name]: value
     });
   };
+  const [users, setUsers] = useState(null)
   const { data, isPending } = useFetchGet(
     'http://206.189.91.54//api/v1/users', headers)
     if (data === null) {
@@ -31,22 +28,17 @@ const AddMember = () => {
     if (found === undefined) {
       console.log('Email is not yet registered')
     } else {
-      addMember(headers, parseInt(id), found.id)
-      .then(result => {
-        if (!result.data) {
-          console.log(result.errors)
-        } else {
-          console.log('User is added to this channel!')
-        }
-      })
+      getContacts(found)
+      setValues({email:""})
     }
-  };
+  }
+
   return (
-  <div className='add-member-container'>
-    <form className="add-member-form" onSubmit={handleSubmit}>
-      <div className="add-member-content">
+    <div className='find-user-container'>
+    <form className="find-user-form" onSubmit={handleSubmit}>
+      <div className="find-user-content">
         <input 
-            className="add-member-input" 
+            className="find-user-input" 
             type="email"
             name="email"
             // autoComplete="off"
@@ -56,10 +48,10 @@ const AddMember = () => {
             onChange={handleChange}
         />
       </div>
-      <button className='add-member-btn' type='submit'>Add Member</button>
+      <button className='find-user-btn' type='submit'><i className="fas fa-search"></i></button>
     </form>
   </div>
   )
 }
 
-export default AddMember;
+export default FindUser;
