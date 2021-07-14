@@ -1,19 +1,20 @@
 @import "../../scss/variables";
 
 .Menu {
-  height: 100%;
+  height: 100vh;
   width: 280px;
-  border: $lightgray-border;
   background-color: $menubgcolor;
   color: $menufont;
   .menu-icons {
     width: 100%;
     h2 {
+      height: 5%;
       color: white;
       text-align: center;
       padding: 20px 0px;
       font-size: $font-sm;
       border-bottom: $lightgray-border;
+      border-right: $lightgray-border;
     }
     .menu-info {
       margin-top: 20px;
@@ -28,6 +29,8 @@
       }
     }
   }
+
+  //All about channels
   .channel {
     width: 100%;
     margin-top: 20px;
@@ -49,6 +52,7 @@
     }
     .channel-list-active {
       width: 100%;
+      margin-top: 10px;
       .channel-preview {
         width: 100%;
         .mychannels {
@@ -67,63 +71,68 @@
       }
     }
   }
-}
 
-.messages {
-  width: 100%;
-  margin-top: 20px;
-  .toggle-messages {
-    padding: 0px 20px;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    button {
-      padding: 0;
-      border: none;
-      background: none;
-      cursor: pointer;
-      color: $menufont;
-    }
-  }
-  .contact-list {
-    display: none;
-  }
-  .contact-list-active {
+  //All about messages
+  .messages {
     width: 100%;
-    .contact-preview {
+    margin-top: 20px;
+    .toggle-messages {
+      padding: 0px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      button {
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: $menufont;
+      }
+    }
+    .contact-list {
+      display: none;
+    }
+    .contact-list-active {
       width: 100%;
-      .mycontacts {
-        display: flex;
-        justify-content: space-between;
-        place-items: center;
+      margin-top: 10px;
+      h4{
+        padding: 0px 30px;
+        font-size: $font-es;
+      }
+      .contact-preview {
         width: 100%;
-        padding: 4px 30px;
+        .mycontacts {
+          display: flex;
+          justify-content: space-between;
+          place-items: center;
+          width: 100%;
+          padding: 4px 30px;
+          a {
+            text-decoration: none;
+            color: $menufont;
+            font-size: $font-es;
+          }
+          i {
+            display: none;
+            font-size: $font-es;
+          }
+        }
+      }
+      .contact-preview:hover {
         a {
-          text-decoration: none;
-          color: $menufont;
-          font-size: $font-es;
+          color: white;
         }
         i {
-          display: none;
+          display: block;
+          cursor: pointer;
         }
-        a:active {
-          font-size: $font-xlg;
-        }
+        background-color: $menuhover;
       }
-    }
-    .contact-preview:hover {
-      a {
-        color: white;
-      }
-      i {
-        display: block;
-        cursor: pointer;
-      }
-      background-color: $menuhover;
     }
   }
 }
 
+//All about popup modal
 .popup-content {
   margin: auto;
   width: 100%;
