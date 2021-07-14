@@ -1,0 +1,39 @@
+@import "../../scss/variables";
+
+.ChannelDetails {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .channel-header {
+    width: 100%;
+    display: flex;
+    border-bottom: $lightgray-border;
+    background-color: $menubgcolor;
+    h2 {
+      text-align: center;
+      padding: 20px 0px;
+      color: white;
+      font-size: $font-sm;
+    }
+  }
+  .channel-feed {
+    height: 100%;
+    justify-self: end;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .mymessages {
+      border-top: $lightgray-border;
+      padding: 10px 10px;
+    }
+  }
+  .message-preview:nth-child(odd) {
+    color: gray;
+  }
+  .channel-chat-box {
+    border: $testborder3;
+  }
+}

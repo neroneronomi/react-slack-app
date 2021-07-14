@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { UserContext } from '../../context/userContext';
 import useFetchGet from '../../API/useFetchGet';
 import AddMember from './AddMember';
+import ChannelFeed from './ChannelFeed';
+import ChannelChatbox from './ChannelChatbox';
+import './ChannelDetails.scss'
 
 const ChannelDetails = () => {
   const { id } = useParams();
@@ -11,15 +14,22 @@ const ChannelDetails = () => {
     `http://206.189.91.54//api/v1/channels/${id}`, headers)
   return (
     <>
+    <div className="ChannelDetails">
+      <div className="channel-header">
+      { error && <h2>{ error }</h2> }
+      { isPending && <h2>Loading...</h2> }
+      { !isPending && <h2>{ channelDetails.data.name }</h2>}
+      { !isPending && <h2>{ channelDetails.data.channel_members.length}</h2>}
       <AddMember />
-      { error && <div>{ error }</div> }
-      { isPending && <div>Loading...</div> }
-      { !isPending && 
-      <div>
-        <h4>{ channelDetails.data.name }</h4>
-        <h4>{ channelDetails.data.channel_members.length}</h4>
-      </div> 
-      }
+      </div>
+      <div className="channel-feed">
+        <ChannelFeed channelDetails={channelDetails} id={id} headers={headers} />
+      </div>
+      <div className="channel-chat-box">
+        <ChannelChatbox channelDetails={channelDetails} id={id} headers={headers} />
+      </div>
+    </div>
+
     </>
   )
 }
