@@ -5,7 +5,6 @@ import ContactDetails from '../../components/Messages/ContactDetails'
 import Menu from '../../components/Menu/Menu';
 import Header from '../../components/Header/Header'
 
-
 const Client = () => {
   return (
     <div className='Client'>
