@@ -135,23 +135,33 @@
 //All about popup modal
 .popup-content {
   margin: auto;
-  width: 20% !important;
-  height: 40%;
+  width: 100%;
+  height: auto;
+  max-width: 520px;
+  max-height: 100%;
   transition: 0.4s ease-in;
   animation: anvil;
-  padding: 10px;
-  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.35);
 }
 .modal {
-  padding: 5px;
-  width: 100%;
-  height: 100%;
+  padding: 20px;
 }
+
 .modal > .header {
   width: 100%;
-  border-bottom: 1px solid gray;
-  font-size: $font-xlg;
-  padding: 5px;
+  font-size: 28px;
+  font-family: $lato;
+  font-weight: 900;
+  padding-bottom: 20px;
+}
+.modal > .caption {
+  font-family: $lato;
+  font-size: 15px;
+  color: $darkgrey;
+  line-height: 1.5;
+  width: 100%;
+  text-align: justify;
 }
 
 .modal > .close {
@@ -184,4 +194,64 @@
     opacity: 1;
     box-shadow: 0 0 500px rgba(241, 241, 241, 0);
   }
+}
+
+.create-channel-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-channel-content label {
+  font-family: $lato;
+  font-size: 15px;
+  color: $blackshade;
+}
+
+.create-channel-input {
+  width: 100%;
+  height: 45px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  padding: 12px;
+  font-size: 18px;
+  border: 1px solid $lightgrey;
+  border-radius: 4px;
+}
+
+.create-channel-input:focus {
+  outline: none;
+  border: 1px solid $darkblue;
+  box-shadow: 0 0 6px 4px $lightblue;
+}
+
+::placeholder {
+  font-family: $lato;
+  color: $grey;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-channel-btn {
+  margin-top: 20px;
+  font-family: $lato;
+  font-size: 15px;
+  font-weight: 900;
+  color: #fff;
+  background-color: $darkgreen;
+  cursor: pointer;
+  height: 36px;
+  min-width: 80px;
+  padding: 0 12px 1px;
+  border: none;
+  border-radius: 4px;
+}
+
+.create-channel-btn:hover {
+  background-color: $green;
+  box-shadow: 0 0 4px 0px $lightgrey;
 }

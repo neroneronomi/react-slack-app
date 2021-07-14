@@ -29,7 +29,6 @@ const ChannelDetails = () => {
         <ChannelChatbox channelDetails={channelDetails} id={id} headers={headers} />
       </div>
     </div>
-
     </>
   )
 }
