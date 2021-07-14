@@ -55,8 +55,11 @@ const AddMember = () => {
             value={values.email}
             onChange={handleChange}
         />
+         <button type='submit'><i class="fas fa-plus"></i></button>
+
       </div>
-      <button className='add-member-btn' type='submit'>Add Member</button>
+     
+
     </form>
   </div>
   )

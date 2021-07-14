@@ -21,7 +21,7 @@ const Channels = () => {
       <div className={stateChannels ? 'channel-list-active' : 'channel-list'}>
         { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> }
-        { channels && <ChannelList channels={channels} /> }
+        { !isPending && <ChannelList channels={channels} /> }
       </div>
     </div>
   )

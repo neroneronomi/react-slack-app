@@ -79,3 +79,30 @@
   width: 85%;
 
 }
+
+.channel_details_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:90%;
+  height:60px;
+  border-bottom: $lightgray-border;
+  align-items: center;
+}
+
+.members_container{
+  margin-right: 3rem;
+}
+.pair{
+  display:flex;
+  justify-content: space-around;
+  width: 350px;
+}
+
+
+.channel_name :hover{
+  background-color: rgb(150, 146, 146);
+}
+.add-member-container button{
+  margin-left: 10px;
+}

@@ -32,7 +32,6 @@ const FindUser = () => {
       setValues({email:""})
     }
   }
-
   return (
     <div className='find-user-container'>
     <form className="find-user-form" onSubmit={handleSubmit}>

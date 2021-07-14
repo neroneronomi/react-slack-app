@@ -62,3 +62,19 @@ export const addMember = (headers, id, member_id) => {
   .then(result => result)
   .catch(error => error);
 }
+ 
+export const sendMessage = (headers, receiver_id, receiver_class, body) => {
+  const Form = new FormData()
+  Form.set('receiver_id', receiver_id)
+  Form.set('receiver_class', receiver_class)
+  Form.set('body', body)
+  const requestOptions = {
+    method: 'POST',
+    headers: headers,
+    body: Form
+  };
+  return fetch('http://206.189.91.54//api/v1/messages', requestOptions)
+  .then(response => response.json())
+  .then(result => result)
+  .catch(error => error);
+}
