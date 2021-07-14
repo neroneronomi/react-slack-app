@@ -15,12 +15,11 @@ const ContactList = () => {
             <div className='contact-preview' key={index}>
               <div className="mycontacts">
                 <Link to={`/client/messages/${contact.data.id}`}>
-                  <span>{contact.data.email} 
-                    <i className="fas fa-times" onClick={() => 
+                  <span>{contact.data.email} </span>
+                </Link>
+                <i className="fas fa-times" onClick={() => 
                       {deleteContact(contact.data.id)}}>
                     </i>
-                  </span>
-                </Link>
               </div>
             </div>
           ))}
