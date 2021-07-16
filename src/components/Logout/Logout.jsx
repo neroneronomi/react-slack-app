@@ -1,5 +1,5 @@
-import { useContext } from 'react'
-import { UserContext } from '../../context/userContext';
+import { useContext } from "react";
+import { UserContext } from "../../context/userContext";
 import { useHistory } from "react-router-dom";
 import "./Logout.scss";
 
@@ -7,15 +7,18 @@ const Logout = () => {
   const { logoutUser } = useContext(UserContext);
   const history = useHistory();
   const handleLogout = (e) => {
-    logoutUser()
+    logoutUser();
     history.push("/");
-    alert('You are logged out.')
-  }
+    // alert("You are logged out.");
+  };
   return (
-    <div className='logout'>
-      <button className='logout-btn' type='button' onClick={handleLogout}>LOGOUT</button>
+    <div className="logout">
+      <button className="logout-btn" type="button" onClick={handleLogout}>
+      <i className="fas fa-sign-out-alt"></i>
+        Sign out
+      </button>
     </div>
-  )
-}
+  );
+};
 
 export default Logout;

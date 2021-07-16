@@ -2,7 +2,7 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import CreateChannel from "./CreateChannel";
 
-const CreateChModal = () => {
+const CreateChannelModal = () => {
   return (
     <Popup
     trigger={<button type='button'><i className="fas fa-plus"></i></button>}
@@ -28,4 +28,4 @@ const CreateChModal = () => {
     </Popup> 
   )
 }
-export default CreateChModal;
+export default CreateChannelModal;
