@@ -1,43 +1,45 @@
-import { useState } from 'react'
-import { sendMessage } from '../../API/useFetchPost';
+import { useState } from "react";
+import "./ChannelDetails.scss";
+import { sendMessage } from "../../API/useFetchPost";
 
-const ChannelChatbox = ({ channelDetails, headers}) => {
+const ChannelChatbox = ({ channelDetails, headers }) => {
+  // const placeholder = `Message ${channelDetails.data.name}`;
   const [values, setValues] = useState({
     body: "",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
-        ...values,
-        [name]: value
+      ...values,
+      [name]: value,
     });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendMessage(headers, channelDetails.data.id, 'Channel', values.body)
-    setValues({body:""})
-    console.log(values.body)
-    console.log(channelDetails.data.id)
-  }
+    sendMessage(headers, channelDetails.data.id, "Channel", values.body);
+    setValues({ body: "" });
+  };
   return (
     <>
-    <form data-testid="form" className="send-message-form" onSubmit={handleSubmit}>
-      <div className="send-message-content">
-        <input data-testid="chatBox"
+      <form className="send-message-form" onSubmit={handleSubmit}>
+        <div className="send-message-content">
+          <input
             className="send-message-input"
             type="text"
             name="body"
             autoComplete="off"
-            // placeholder=""
-            required  
+            // placeholder={placeholder}
+            required
             value={values.body}
             onChange={handleChange}
-        />
-      </div>
-      <button data-test-id="btn" className='send-message-btn' type='submit'><i className="fas fa-search"></i></button>
-    </form>
+          />
+        </div>
+        <button className="send-message-btn" type="submit">
+          <i className="fas fa-paper-plane" title="Send"></i>
+        </button>
+      </form>
     </>
-  )
-}
+  );
+};
 
-export default ChannelChatbox
+export default ChannelChatbox;

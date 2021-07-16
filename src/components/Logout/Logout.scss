@@ -1,13 +1,29 @@
 @import "../../scss/variables";
 
+.logout {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px 20px;
+}
+
 .logout-btn {
-    background-color: #5C2C5D;
-    color: white;
-    border-radius: 4px;
-    margin-left: 50px;  
-    padding: 2px;
+  background-color: transparent;
+  opacity: 0.8;
+  border: none;
+  font-family: $lato;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 900;
+  height: 26px;
+  padding: 0 10px 0 10px;
+  width: auto;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .logout-btn:hover {
-    background-color: #0B4C8C;
+  background-color: $lightviolet;
+  opacity: 1;
 }

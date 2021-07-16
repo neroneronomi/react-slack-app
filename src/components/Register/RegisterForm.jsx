@@ -24,7 +24,7 @@ const RegisterForm = () => {
     registerUser(values)
       .then((result) => {
         if (result.status === "error") {
-          console.log(result.errors.full_messages);
+          alert(result.errors.full_messages);
         } else {
           alert("Account created.");
           history.push("/");

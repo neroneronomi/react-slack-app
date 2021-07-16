@@ -27,7 +27,7 @@ const LoginForm = () => {
         history.push("/client");
         alert("You are logged in.");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert(error));
   };
   return (
     <div className="login-container">
