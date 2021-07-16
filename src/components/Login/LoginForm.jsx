@@ -25,7 +25,6 @@ const LoginForm = () => {
       .then((data) => {
         getHeaders(data);
         history.push("/client");
-        alert("You are logged in.");
       })
       .catch((error) => alert(error));
   };
@@ -42,6 +41,7 @@ const LoginForm = () => {
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="login-content">
           <input
+          data-testid="email"
             className="login-input"
             type="email"
             name="email"
@@ -54,6 +54,7 @@ const LoginForm = () => {
         </div>
         <div className="login-content">
           <input
+          data-testid="password"
             className="login-input"
             type="password"
             name="password"
@@ -64,7 +65,7 @@ const LoginForm = () => {
             onChange={handleChange}
           />
         </div>
-        <button className="login-btn" type="submit">
+        <button data-testid="loginBtn" className="login-btn" type="submit">
           Continue
         </button>
         <div className="signup-caption">

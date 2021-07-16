@@ -6,7 +6,7 @@ const MenuIcons = () => {
   return (
     <div className="menu-icons">
       <div className="menu-account">
-        <h2>{headers.uid}</h2>
+        <h2 data-testid= "uid">{headers.uid}</h2>
       </div>
 
       <div className="menu-info">
