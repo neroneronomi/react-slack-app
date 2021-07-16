@@ -1,12 +1,12 @@
 @import "../../scss/variables";
 
 .Menu {
-  height: 100vh;
-  min-width: 260px;
+  grid-column: 1 / 4;
+  grid-row: 2 / 21;
+  display: flex;
+  flex-direction: column;
   background-color: $menubgcolor;
   color: $menufont;
-  margin-top: 38px;
-
   .far,
   .fas {
     width: 26px;
@@ -311,3 +311,6 @@
   background-color: $green;
   box-shadow: 0 0 4px 0px $lightgrey;
 }
+
+
+

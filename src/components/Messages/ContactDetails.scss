@@ -1,11 +1,10 @@
 @import "../../scss/variables";
 
 .ContactDetails {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  grid-column: 4 / 21;
+  grid-row: 2 /21;
+  display: grid;
+  grid-template-rows: 8% 84% 8%;
   .far,
   .fas {
     color: $blackshade;
@@ -17,15 +16,10 @@
     align-items: center;
   }
   .contact-header {
-    position: sticky;
+    grid-row: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 38px;
-    left: 260px;
-    height: 50px;
-    max-width: 100vw;
-    display: flex;
     border-bottom: 1px solid #e2e2e2;
     background-color: white;
     h2 {
@@ -38,40 +32,13 @@
       padding: 0 0 0 16px;
       font-size: 18px;
     }
-    input {
-      width: 100%;
-      font-family: $lato;
-      background-color: transparent;
-      border: none;
-      text-align: left;
-      outline: 0;
-      color: white;
-      cursor: pointer;
-    }
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
-      -webkit-box-shadow: 0 0 0 30px white inset !important;
-    }
-    ::placeholder {
-      color: $grey;
-    }
-    button {
-      background-color: transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
-    }
   }
 }
 .contact-feed {
-  height: 100%;
-  justify-self: end;
-  overflow-y: scroll;
+  grid-row: 2;
+  overflow-y: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-flow: column nowrap;
   .mymessages {
     border-top: 1px solid #e2e2e2;
     padding: 8px 20px;
@@ -110,6 +77,10 @@
       }
     }
   }
+}
+
+.contact-feed > :first-child {
+  margin-top: auto !important;
 }
 
 .mymessages:hover {

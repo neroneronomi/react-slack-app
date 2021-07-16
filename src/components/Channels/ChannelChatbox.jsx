@@ -3,7 +3,7 @@ import "./ChannelDetails.scss";
 import { sendMessage } from "../../API/useFetchPost";
 
 const ChannelChatbox = ({ channelDetails, headers }) => {
-  const placeholder = `Message ${channelDetails.data.name}`;
+  // const placeholder = `Message ${channelDetails.data.name}`;
   const [values, setValues] = useState({
     body: "",
   });
@@ -18,8 +18,6 @@ const ChannelChatbox = ({ channelDetails, headers }) => {
     e.preventDefault();
     sendMessage(headers, channelDetails.data.id, "Channel", values.body);
     setValues({ body: "" });
-    console.log(values.body);
-    console.log(channelDetails.data.id);
   };
   return (
     <>
@@ -30,14 +28,14 @@ const ChannelChatbox = ({ channelDetails, headers }) => {
             type="text"
             name="body"
             autoComplete="off"
-            placeholder={placeholder}
+            // placeholder={placeholder}
             required
             value={values.body}
             onChange={handleChange}
           />
         </div>
         <button className="send-message-btn" type="submit">
-          <i class="fas fa-paper-plane" title="Send"></i>
+          <i className="fas fa-paper-plane" title="Send"></i>
         </button>
       </form>
     </>

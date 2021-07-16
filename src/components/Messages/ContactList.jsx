@@ -16,7 +16,7 @@ const ContactList = () => {
                 <div className="contact-preview" key={index}>
                   <div className="mycontacts">
                     <Link to={`/client/messages/${contact.data.id}`}>
-                      <i class="fas fa-user"></i>
+                      <i className="fas fa-user"></i>
                       <span>{contact.data.email} </span>
                     </Link>
                     <i

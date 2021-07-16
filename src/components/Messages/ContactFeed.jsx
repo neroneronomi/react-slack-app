@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ContactFeed = ({ headers, id }) => {
   const [messages, setMessages] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
-
+  const messagesEndRef = useRef(null)
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "auto" })
+  }
   useEffect(() => {
     const requestOptions = {
       method: "GET",
@@ -29,9 +32,9 @@ const ContactFeed = ({ headers, id }) => {
         setIsPending(false);
         setError(error);
       });
+      scrollToBottom()
     // eslint-disable-next-line
   }, [messages]);
-
   return (
     <>
       {error && <div>{error}</div>}
@@ -41,7 +44,7 @@ const ContactFeed = ({ headers, id }) => {
           <div className="message-preview" key={index}>
             <div className="mymessages">
               <div className="message-details">
-                <i class="fas fa-user"></i>
+                <i className="fas fa-user"></i>
                 <h5>{message.sender.uid}</h5>
                 <h6>{message.created_at.substr(11, 5)}</h6>
               </div>
@@ -49,6 +52,7 @@ const ContactFeed = ({ headers, id }) => {
             </div>
           </div>
         ))}
+        <div ref={messagesEndRef} />
     </>
   );
 };

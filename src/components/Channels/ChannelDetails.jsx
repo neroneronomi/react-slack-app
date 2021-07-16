@@ -16,14 +16,13 @@ const ChannelDetails = () => {
     error,
   } = useFetchGet(`http://206.189.91.54//api/v1/channels/${id}`, headers);
   return (
-    <>
       <div className="ChannelDetails">
         <div className="channel-header">
           {error && <h2>{error}</h2>}
           {isPending && <h2>Loading...</h2>}
           {!isPending && <h2># {channelDetails.data.name}</h2>}
           <div className="member-count">
-            <i class="fas fa-user"></i>
+            <i className="fas fa-user"></i>
             {!isPending && (
               <h2 className="members">
                 {channelDetails.data.channel_members.length}
@@ -47,7 +46,6 @@ const ChannelDetails = () => {
           />
         </div>
       </div>
-    </>
   );
 };
 
