@@ -25,6 +25,7 @@ const LoginForm = () => {
       .then((data) => {
         getHeaders(data);
         history.push("/client");
+        // alert("You are logged in.");
       })
       .catch((error) => alert(error));
   };
