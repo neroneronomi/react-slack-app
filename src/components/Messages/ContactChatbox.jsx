@@ -3,7 +3,7 @@ import { sendMessage } from "../../API/useFetchPost";
 import "./ContactDetails.scss";
 
 const ContactChatbox = ({ recipient, headers }) => {
-  const placeholder = `Message ${recipient.uid}`;
+  // const placeholder = `Message ${recipient.uid}`;
   const [values, setValues] = useState({
     body: "",
   });
@@ -28,7 +28,7 @@ const ContactChatbox = ({ recipient, headers }) => {
             type="text"
             name="body"
             autoComplete="off"
-            placeholder={placeholder}
+            // placeholder={placeholder}
             required
             value={values.body}
             onChange={handleChange}

@@ -1,11 +1,10 @@
 @import "../../scss/variables";
 
 .ChannelDetails {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  grid-column: 4 / 21;
+  grid-row: 2 /21;
+  display: grid;
+  grid-template-rows: 8% 84% 8%;
   .far,
   .fas {
     color: $blackshade;
@@ -17,15 +16,10 @@
     align-items: center;
   }
   .channel-header {
-    position: sticky;
+    grid-row: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 38px;
-    left: 260px;
-    height: 50px;
-    max-width: 100vw;
-    display: flex;
     border-bottom: 1px solid #e2e2e2;
     background-color: white;
     h2 {
@@ -48,50 +42,24 @@
       padding: 0 15px 0 5px;
     }
     .add-member-content {
-      cursor: pointer;
-      width: 200px;
-      border-radius: 4px;
-      text-align: center;
-      padding: 0 8px 0 8px;
-      border: $lightgray-border;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
       input {
-        width: 100%;
-        font-family: $lato;
-        background-color: transparent;
-        border: none;
-        text-align: left;
-        outline: 0;
-        color: white;
-        cursor: pointer;
-      }
-      input:-webkit-autofill,
-      input:-webkit-autofill:hover,
-      input:-webkit-autofill:focus,
-      input:-webkit-autofill:active {
-        -webkit-box-shadow: 0 0 0 30px white inset !important;
-      }
-      ::placeholder {
-        color: $grey;
+        padding: 4px 4px;
       }
       button {
+        padding: 4px 4px;
         background-color: transparent;
         border: none;
         outline: none;
         cursor: pointer;
+        margin-left: 4px;
       }
     }
   }
   .channel-feed {
-    height: 100%;
-    justify-self: end;
-    overflow-y: scroll;
+    grid-row: 2;
+    overflow-y: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-flow: column nowrap;
     .mymessages {
       border-top: 1px solid #e2e2e2;
       padding: 8px 20px;
@@ -132,33 +100,32 @@
     }
   }
 
+  .channel-feed > :first-child {
+    margin-top: auto !important;
+  }
+
   .mymessages:hover {
     background-color: #f8f8f8;
   }
-  // .message-preview:nth-child(odd) {
-  //   // color: gray;
-  //   i:before {
-  //     // border: 1px solid $lightgrey;
-  //     // color: $lightgrey;
-  //     opacity: 0.5;
-  //   }
-  // }
+
   .channel-chat-box {
-    height: 50px;
-    margin: 20px;
+    grid-row: 3;
+    align-self: center;
     border: 1px solid $grey;
+    margin: 0px 24px;
     border-radius: 4px;
     padding: 8px;
     .send-message-form {
       width: 100%;
-      height: 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .send-message-input {
       width: 1000px;
+      height: 100%;
       border: none;
+      font: $font-med;
     }
     .send-message-input:focus {
       border: none;

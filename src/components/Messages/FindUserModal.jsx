@@ -21,7 +21,7 @@ const FindUserModal = () => {
           <div className="header">Send a direct message</div>
           <br></br>
           <div className="content">
-            <FindUser />
+            <FindUser close={close}/>
           </div>
         </div>
       )}

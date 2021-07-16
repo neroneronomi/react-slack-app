@@ -1,7 +1,6 @@
 import { useContext, React } from "react";
 import { UserContext } from "../../context/userContext";
 import "./Header.scss";
-import Logout from "../../components/Logout/Logout";
 
 function Header() {
   const { headers } = useContext(UserContext);
@@ -19,13 +18,12 @@ function Header() {
       {/* Center Side of Header */}
       <div className="HeaderSearch">
         <input placeholder={placeholder}></input>
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
       </div>
       {/* Right Side of Header  */}
       <div className="HeaderRight">
         <i className="far fa-question-circle" title="Help"></i>
       </div>
-      <Logout />
     </div>
   );
 }

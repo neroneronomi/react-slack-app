@@ -20,7 +20,7 @@ const CreateChannel = () => {
     createChannel(headers, values.name, values.user_ids)
       .then((data) => {
         if (data.errors.length !== 0) {
-          console.log(data.errors);
+          alert(data.errors);
         } else {
           console.log("Hello");
         }

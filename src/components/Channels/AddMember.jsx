@@ -31,13 +31,13 @@ const AddMember = () => {
     e.preventDefault();
     const found = users.find((user) => user.uid.includes(values.email));
     if (found === undefined) {
-      console.log("Email is not yet registered");
+      alert("Email is not yet registered");
     } else {
       addMember(headers, parseInt(id), found.id).then((result) => {
         if (!result.data) {
           console.log(result.errors);
         } else {
-          console.log("User is added to this channel!");
+          alert("User is added to this channel!");
         }
       });
     }
@@ -50,7 +50,7 @@ const AddMember = () => {
             className="add-member-input"
             type="email"
             name="email"
-            // autoComplete="off"
+            autoComplete="off"
             placeholder="Add more members"
             required
             value={values.email}

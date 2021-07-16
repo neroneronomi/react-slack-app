@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ChannelFeed = ({ headers, id }) => {
   const [messages, setMessages] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
-
+  const messagesEndRef = useRef(null)
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "auto" })
+  }
   useEffect(() => {
     const requestOptions = {
       method: "GET",
@@ -29,6 +32,7 @@ const ChannelFeed = ({ headers, id }) => {
         setIsPending(false);
         setError(error);
       });
+      scrollToBottom()
     // eslint-disable-next-line
   }, [messages]);
   return (
@@ -48,6 +52,7 @@ const ChannelFeed = ({ headers, id }) => {
             </div>
           </div>
         ))}
+        <div ref={messagesEndRef} />
     </>
   );
 };

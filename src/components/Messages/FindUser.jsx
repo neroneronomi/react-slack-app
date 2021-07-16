@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/userContext";
+import { useHistory } from "react-router-dom";
 import useFetchGet from "../../API/useFetchGet";
 
-const FindUser = () => {
+const FindUser = ({ close }) => {
   const { headers, getContacts } = useContext(UserContext);
   const [values, setValues] = useState({
     email: "",
@@ -14,6 +15,7 @@ const FindUser = () => {
       [name]: value,
     });
   };
+  const history = useHistory();
   const [users, setUsers] = useState(null);
   const { data, isPending } = useFetchGet(
     "http://206.189.91.54//api/v1/users",
@@ -28,17 +30,19 @@ const FindUser = () => {
     e.preventDefault();
     const found = users.find((user) => user.uid.includes(values.email));
     if (found === undefined) {
-      console.log("Email is not yet registered");
+      alert("Email is not yet registered");
     } else {
       getContacts(found);
       setValues({ email: "" });
+      history.push(`/client/messages/${found.id}`);
     }
+    close();
   };
   return (
     <div className="find-user-container">
       <form className="find-user-form" onSubmit={handleSubmit}>
         <div className="find-user-content">
-          <label for="find-user-input">
+          <label htmlFor="find-user-input">
             <strong>Email Address</strong>
           </label>
           <input

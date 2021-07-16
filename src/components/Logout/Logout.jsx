@@ -14,7 +14,8 @@ const Logout = () => {
   return (
     <div className="logout">
       <button className="logout-btn" type="button" onClick={handleLogout}>
-        Logout
+      <i className="fas fa-sign-out-alt"></i>
+        Sign out
       </button>
     </div>
   );
