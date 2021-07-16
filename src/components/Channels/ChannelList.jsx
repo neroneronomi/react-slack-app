@@ -5,7 +5,7 @@ const ChannelList = ({ channels }) => {
     <>
       {(() => {
         if (channels.errors === "No available channels.") {
-          return <h4>{channels.errors}</h4>;
+          return <h4 className="no-contacts-caption">{channels.errors}</h4>;
         } else {
           return (
             <div>
