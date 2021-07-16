@@ -9,7 +9,7 @@ const Logout = () => {
   const handleLogout = (e) => {
     logoutUser();
     history.push("/");
-    alert("You are logged out.");
+    // alert("You are logged out.");
   };
   return (
     <div className="logout">

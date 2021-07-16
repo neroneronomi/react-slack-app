@@ -57,7 +57,7 @@ const AddMember = () => {
             onChange={handleChange}
           />
           <button type="submit">
-            <i class="fas fa-plus" title="Add member"></i>
+            <i className="fas fa-plus" title="Add member"></i>
           </button>
         </div>
       </form>
