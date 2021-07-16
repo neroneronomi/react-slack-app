@@ -13,7 +13,7 @@ function Header() {
         {/* add avatar */}
         {/* <i class="fas fa-user"></i> */}
         <div className="TimeIcon" title="History">
-          <i class="far fa-clock"></i>
+          <i className="far fa-clock"></i>
         </div>
       </div>
       {/* Center Side of Header */}
@@ -23,7 +23,7 @@ function Header() {
       </div>
       {/* Right Side of Header  */}
       <div className="HeaderRight">
-        <i class="far fa-question-circle" title="Help"></i>
+        <i className="far fa-question-circle" title="Help"></i>
       </div>
       <Logout />
     </div>

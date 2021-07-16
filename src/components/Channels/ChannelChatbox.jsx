@@ -37,7 +37,7 @@ const ChannelChatbox = ({ channelDetails, headers }) => {
           />
         </div>
         <button className="send-message-btn" type="submit">
-          <i class="fas fa-paper-plane" title="Send"></i>
+          <i className="fas fa-paper-plane" title="Send"></i>
         </button>
       </form>
     </>

@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../context/userContext";
 import useFetchGet from "../../API/useFetchGet";
 import ChannelList from "./ChannelList";
-import CreateChModal from "./CreateChModal";
+import CreateChannelModal from "./CreateChannelModal";
 
 const Channels = () => {
   const { headers } = useContext(UserContext);
@@ -28,7 +28,7 @@ const Channels = () => {
           ></i>{" "}
           Channels
         </h4>
-        <CreateChModal />
+        <CreateChannelModal />
       </div>
       <div className={stateChannels ? "channel-list-active" : "channel-list"}>
         {error && <div>{error}</div>}

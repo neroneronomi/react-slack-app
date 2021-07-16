@@ -40,7 +40,7 @@ const ChannelFeed = ({ headers, id }) => {
           <div className="message-preview" key={index}>
             <div className="mymessages">
               <div className="message-details">
-                <i class="fas fa-user"></i>
+                <i className="fas fa-user"></i>
                 <h5>{message.sender.uid}</h5>
                 <h6>{message.created_at.substr(11, 5)}</h6>
               </div>

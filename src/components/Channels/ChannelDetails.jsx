@@ -23,7 +23,7 @@ const ChannelDetails = () => {
           {isPending && <h2>Loading...</h2>}
           {!isPending && <h2># {channelDetails.data.name}</h2>}
           <div className="member-count">
-            <i class="fas fa-user"></i>
+            <i className="fas fa-user"></i>
             {!isPending && (
               <h2 className="members">
                 {channelDetails.data.channel_members.length}
