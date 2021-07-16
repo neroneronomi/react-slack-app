@@ -29,7 +29,7 @@ const ContactChatbox = ({ recipient, headers }) => {
             name="body"
             autoComplete="off"
             // placeholder={placeholder}
-            required
+            // required
             value={values.body}
             onChange={handleChange}
           />
