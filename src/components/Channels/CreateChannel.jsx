@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../../context/userContext";
 import { createChannel } from "../../API/useFetchPost";
 
+
 const CreateChannel = () => {
   const { headers } = useContext(UserContext);
   const [values, setValues] = useState({
@@ -23,6 +24,7 @@ const CreateChannel = () => {
           alert(data.errors);
         } else {
           console.log("Hello");
+          console.log(data)
         }
       })
       //DITO NAG SUSUCCESS YUNG CREATE CHANNEL.
