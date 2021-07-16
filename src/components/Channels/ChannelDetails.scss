@@ -1,12 +1,15 @@
 @import "../../scss/variables";
 
 .ChannelDetails {
-  grid-column: 2;
-  grid-row: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-end;
+  display: grid;
+  grid-template-rows: 50px auto 80px;
   height: 100%;
+  width: 100%;
   .far,
   .fas {
     color: $blackshade;
@@ -18,9 +21,9 @@
     align-items: center;
   }
   .channel-header {
-    position: absolute;
-    top: 41px;
-    width: 85%;
+    grid-row: 1;
+    // width: 100%;
+    // position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +63,9 @@
     }
   }
   .channel-feed {
-    max-height: 800px;
+    grid-row: 2;
+    max-height: 910px;
+    align-self: end;
     overflow-y: auto;
     display: flex;
     flex-flow: column nowrap;
@@ -113,6 +118,8 @@
   }
 
   .channel-chat-box {
+    grid-row: 3;
+    place-self: center;
     width: 95%;
     align-self: center;
     border: 1px solid $grey;

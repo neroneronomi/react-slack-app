@@ -2,7 +2,7 @@
 
 .Menu {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 2 / 4;
   display: flex;
   flex-direction: column;
   background-color: $menubgcolor;
@@ -34,9 +34,9 @@
   .menu-icons {
     width: 100%;
     .menu-account {
-      position: sticky;
-      top: 38px;
-      margin-bottom: 20px;
+      // position: sticky;
+      // top: 38px;
+      // margin-bottom: 20px;
       background-color: $menubgcolor;
     }
     h2 {
