@@ -48,6 +48,7 @@ const RegisterForm = () => {
       <form className="register-form" onSubmit={handleSubmit}>
         <div className="register-content">
           <input
+            data-testid="regEmail"
             className="register-input"
             type="email"
             name="email"
@@ -60,6 +61,7 @@ const RegisterForm = () => {
         </div>
         <div className="register-content">
           <input
+           data-testid="regPass"
             className="register-input"
             type="password"
             name="password"
@@ -72,6 +74,7 @@ const RegisterForm = () => {
         </div>
         <div className="register-content">
           <input
+            data-testid="passConfirm"
             className="register-input"
             type="password"
             name="password_confirmation"
