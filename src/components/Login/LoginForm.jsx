@@ -38,7 +38,7 @@ const LoginForm = () => {
         </div>
         <div className="right-col"></div>
       </header>
-      <h1 className="login-heading">Sign in to your workspace</h1>
+      <h1 data-testid="signin" className="login-heading">Sign in to your workspace</h1>
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="login-content">
           <input

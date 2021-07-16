@@ -36,7 +36,7 @@ const ChannelFeed = ({ headers, id }) => {
         <div className='message-preview' key={index}>
           <div className="mymessages">
             <h5>{message.sender.uid}</h5>
-            <span>{message.body}</span>
+            <span data-testid="message">{message.body}</span>
             <h6>{message.created_at.substr(11, 5) }</h6> 
           </div>
         </div>

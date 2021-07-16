@@ -21,10 +21,10 @@ const ChannelChatbox = ({ channelDetails, headers}) => {
   }
   return (
     <>
-    <form className="send-message-form" onSubmit={handleSubmit}>
+    <form data-testid="form" className="send-message-form" onSubmit={handleSubmit}>
       <div className="send-message-content">
-        <input 
-            className="send-message-input" 
+        <input data-testid="chatBox"
+            className="send-message-input"
             type="text"
             name="body"
             autoComplete="off"
@@ -34,7 +34,7 @@ const ChannelChatbox = ({ channelDetails, headers}) => {
             onChange={handleChange}
         />
       </div>
-      <button className='send-message-btn' type='submit'><i className="fas fa-search"></i></button>
+      <button data-test-id="btn" className='send-message-btn' type='submit'><i className="fas fa-search"></i></button>
     </form>
     </>
   )
