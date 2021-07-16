@@ -24,6 +24,7 @@ const ChannelChatbox = ({ channelDetails, headers }) => {
       <form className="send-message-form" onSubmit={handleSubmit}>
         <div className="send-message-content">
           <input
+            data-testid="chatBox"
             className="send-message-input"
             type="text"
             name="body"
