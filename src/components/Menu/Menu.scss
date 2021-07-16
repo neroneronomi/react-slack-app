@@ -2,32 +2,70 @@
 
 .Menu {
   height: 100vh;
-  width: 280px;
+  min-width: 260px;
   background-color: $menubgcolor;
   color: $menufont;
   margin-top: 38px;
 
+  .far,
+  .fas {
+    width: 26px;
+    height: 20px;
+    margin-right: 3px;
+  }
+  .far::before,
+  .fas::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 20px;
+  }
+  h4 {
+    font-weight: normal;
+  }
+  .no-contacts-caption {
+    height: 28px;
+    padding: 0 48px;
+    font-size: 15px;
+    font-family: $lato;
+    color: rgba(181, 171, 188, 1);
+  }
   .menu-icons {
     width: 100%;
+    .menu-account {
+      position: sticky;
+      top: 38px;
+      margin-bottom: 20px;
+      background-color: $menubgcolor;
+    }
     h2 {
-      height: 5%;
+      height: 50px;
+      line-height: 50px;
+      font-weight: 900;
+      font-family: $lato;
       color: white;
-      text-align: center;
-      padding: 20px 0px;
-      font-size: $font-sm;
-      border-bottom: $lightgray-border;
-      border-right: $lightgray-border;
+      text-align: left;
+      padding: 0 0 0 16px;
+      font-size: 18px;
+      border-bottom: 1px solid #582d59;
+      border-top: 1px solid #582d59;
     }
     .menu-info {
       margin-top: 20px;
       cursor: pointer;
       .info {
-        padding: 4px 20px;
-        font-size: $font-sm;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 28px;
+        padding: 0 16px;
+        font-size: 15px;
+        font-family: $lato;
+        color: rgba(181, 171, 188, 1);
       }
       .info:hover {
-        color: white;
-        background-color: $menuhover;
+        background-color: $violet;
       }
     }
   }
@@ -36,8 +74,11 @@
   .channel {
     width: 100%;
     margin-top: 20px;
+    font-size: 15px;
+    font-family: $lato;
+    color: rgba(181, 171, 188, 1);
     .toggle-channel {
-      padding: 0px 20px;
+      padding: 0px 16px;
       display: flex;
       justify-content: space-between;
       cursor: pointer;
@@ -46,7 +87,7 @@
         border: none;
         background: none;
         cursor: pointer;
-        color: $menufont;
+        color: rgba(181, 171, 188, 1);
       }
     }
     .channel-list {
@@ -59,17 +100,22 @@
         width: 100%;
         .mychannels {
           width: 100%;
-          padding: 2px 30px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          height: 28px;
+          padding: 0 32px;
           a {
             text-decoration: none;
-            color: $menufont;
-            font-size: $font-es;
+            font-size: 15px;
+            font-family: $lato;
+            color: rgba(181, 171, 188, 1);
+            cursor: pointer;
           }
         }
       }
       .channel-preview:hover {
-        color: white;
-        background-color: $menuhover;
+        background-color: $violet;
       }
     }
   }
@@ -78,17 +124,20 @@
   .messages {
     width: 100%;
     margin-top: 20px;
+    font-size: 15px;
+    font-family: $lato;
+    color: rgba(181, 171, 188, 1);
     .toggle-messages {
-      padding: 0px 20px;
-      cursor: pointer;
+      padding: 0px 16px;
       display: flex;
       justify-content: space-between;
+      cursor: pointer;
       button {
         padding: 0;
         border: none;
         background: none;
         cursor: pointer;
-        color: $menufont;
+        color: rgba(181, 171, 188, 1);
       }
     }
     .contact-list {
@@ -97,38 +146,37 @@
     .contact-list-active {
       width: 100%;
       margin-top: 10px;
-      h4{
-        padding: 0px 30px;
-        font-size: $font-es;
-      }
       .contact-preview {
         width: 100%;
         .mycontacts {
+          width: 100%;
           display: flex;
           justify-content: space-between;
-          place-items: center;
-          width: 100%;
-          padding: 4px 30px;
+          align-items: center;
+          height: 28px;
+          padding: 0 25px;
           a {
             text-decoration: none;
-            color: $menufont;
-            font-size: $font-es;
+            font-size: 15px;
+            font-family: $lato;
+            color: rgba(181, 171, 188, 1);
+            cursor: pointer;
           }
-          i {
+          .fa-times {
             display: none;
-            font-size: $font-es;
+            width: 26px;
+            height: 20px;
+            padding: 0;
           }
         }
       }
       .contact-preview:hover {
-        a {
-          color: white;
-        }
-        i {
+        .fa-times {
           display: block;
           cursor: pointer;
+          padding: 0;
         }
-        background-color: $menuhover;
+        background-color: $violet;
       }
     }
   }
@@ -198,18 +246,21 @@
   }
 }
 
-.create-channel-content {
+.create-channel-content,
+.find-user-content {
   display: flex;
   flex-direction: column;
 }
 
-.create-channel-content label {
+.create-channel-content label,
+.find-user-content label {
   font-family: $lato;
   font-size: 15px;
   color: $blackshade;
 }
 
-.create-channel-input {
+.create-channel-input,
+.find-user-input {
   width: 100%;
   height: 45px;
   margin-top: 8px;
@@ -220,7 +271,8 @@
   border-radius: 4px;
 }
 
-.create-channel-input:focus {
+.create-channel-input:focus,
+.find-user-input:focus {
   outline: none;
   border: 1px solid $darkblue;
   box-shadow: 0 0 6px 4px $lightblue;
@@ -238,7 +290,8 @@
   align-items: center;
 }
 
-.create-channel-btn {
+.create-channel-btn,
+.find-user-btn {
   margin-top: 20px;
   font-family: $lato;
   font-size: 15px;
@@ -253,7 +306,8 @@
   border-radius: 4px;
 }
 
-.create-channel-btn:hover {
+.create-channel-btn:hover,
+.find-user-btn:hover {
   background-color: $green;
   box-shadow: 0 0 4px 0px $lightgrey;
 }
