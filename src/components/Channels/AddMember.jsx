@@ -35,7 +35,7 @@ const AddMember = () => {
     } else {
       addMember(headers, parseInt(id), found.id).then((result) => {
         if (!result.data) {
-          console.log(result.errors);
+          alert(result.errors);
         } else {
           alert("User is added to this channel!");
         }
